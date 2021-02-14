@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "681118994990",
+    "project_id": "itutor-51eee",
+    "storage_bucket": "itutor-51eee.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:681118994990:android:024d7b43512863efa245bf",
+        "android_client_info": {
+          "package_name": "uz.smd.itutor"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "681118994990-0n7nbq3gu74l7n7lenl86it8nhtqhlgn.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "uz.smd.itutor",
+            "certificate_hash": "fa36a58e74b9ac08d5c54dc68439a1103d91afeb"
+          }
+        },
+        {
+          "client_id": "681118994990-tp1v9nq3j7tvm6i5n79j055fnpjo72mn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAmNqV8gGHOmZleTc-LIUInbOM3tlMMrgM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "681118994990-tp1v9nq3j7tvm6i5n79j055fnpjo72mn.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
