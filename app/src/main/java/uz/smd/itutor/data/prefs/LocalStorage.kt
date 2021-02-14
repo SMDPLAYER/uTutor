@@ -1,20 +1,18 @@
 package uz.smd.itutor.data.prefs
 
 import android.content.Context
+import dagger.hilt.android.qualifiers.ApplicationContext
 import javax.inject.Inject
+import javax.inject.Singleton
 
-class LocalStorage @Inject constructor(context: Context) {
+/**
+ * Created by Siddiqov Muxriddin on 10.02.2021
+ */
 
-    companion object {
-        @Volatile
-        lateinit var instance: LocalStorage
-        fun init(context: Context) {
-            instance =
-                LocalStorage(context)
-
-        }
-    }
+@Singleton
+class LocalStorage @Inject constructor(@ApplicationContext context: Context) {
 
     private var pref = context.getSharedPreferences("data", Context.MODE_PRIVATE)
+
     var name by StringPreference(pref)
 }

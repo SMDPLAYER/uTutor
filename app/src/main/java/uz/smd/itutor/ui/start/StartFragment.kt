@@ -13,17 +13,18 @@ import uz.smd.itutor.R
 /**
  * Created by Siddikov Mukhriddin on 2/10/21
  */
+@SuppressLint("FragmentLiveDataObserve")
 @AndroidEntryPoint
 class StartFragment : Fragment(R.layout.fragment_start) {
     private val viewModel: StartVModel by viewModels()
 
-    @SuppressLint("FragmentLiveDataObserve")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        viewModel.ks.observe(this, Observer {
-            Toast.makeText(requireContext(), "salom", Toast.LENGTH_SHORT).show()
-        })
-        viewModel.ks.observe(this, Observer {
+        handleLiveData()
+    }
+
+    fun handleLiveData() {
+        viewModel.k.observe(this, Observer {
             Toast.makeText(requireContext(), it, Toast.LENGTH_SHORT).show()
         })
     }

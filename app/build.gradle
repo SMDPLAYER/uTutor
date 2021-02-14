@@ -49,6 +49,7 @@ dependencies {
     //Hilt with ViewModel
     def hilt_jetpack_version = "1.0.0-alpha02"
     implementation "androidx.hilt:hilt-lifecycle-viewmodel:$hilt_jetpack_version"
+    kapt "androidx.hilt:hilt-compiler:$hilt_jetpack_version"
 
 //navigation
     implementation 'androidx.navigation:navigation-fragment-ktx:2.3.2'

@@ -9,15 +9,14 @@ import javax.inject.Inject
 /**
  * Created by Siddikov Mukhriddin on 2/10/21
  */
-class StartVModel @ViewModelInject constructor(val prefss:LocalStorage) :ViewModel(){
-    @Inject
-   lateinit var  prefs:LocalStorage
+class StartVModel @ViewModelInject constructor(prefss: LocalStorage) : ViewModel() {
 
-     val ks=MutableLiveData<String>()
-     val k=MutableLiveData<String>()
+
+    val k = MutableLiveData<String>()
+
     init {
-        k.value=prefss.name
-        ks.value=prefs.name
+        prefss.name="hello"
+        k.value = prefss.name
     }
 
 }
