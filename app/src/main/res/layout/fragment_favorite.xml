@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_marginBottom="70dp"
+    android:id="@+id/NestedScrollView"
+    android:layout_height="match_parent">
+    <LinearLayout android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            style="@style/TextAppearance.AppCompat.Title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:text="Tanlanganlar"
+            android:textColor="#000"
+            app:layout_constraintEnd_toStartOf="@id/btn_filter" />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="15dp"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/btn_all_programs"
+                android:layout_width="wrap_content"
+               android:paddingVertical="6dp"
+                android:paddingHorizontal="@dimen/_10dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/programs_active_bg"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center"
+                android:text="O'qituchilar"
+                android:textColor="#000"
+                android:textSize="16sp" />
+
+            <TextView
+                android:paddingHorizontal="20dp"
+                android:id="@+id/btn_active_programs"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center"
+                android:text="Obunalar"
+                android:textColor="#99000000"
+                android:textSize="16sp"
+                />
+        </LinearLayout>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/listPrograms"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            />
+        <TextView
+            android:paddingHorizontal="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clickable="true"
+            android:focusable="true"
+           android:textStyle="bold"
+            android:text="Arxiv"
+            android:textColor="#000"
+            android:textSize="16sp"
+            />
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/listPrograms1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:listitem="@layout/item_programs_list" />
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>
