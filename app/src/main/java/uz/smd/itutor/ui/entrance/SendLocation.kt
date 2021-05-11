@@ -23,6 +23,7 @@ import uz.smd.itutor.ui.entrance.location.LocationReceiver
 import uz.smd.itutor.ui.entrance.location.SimpleLocation
 import uz.smd.itutor.ui.entrance.location.toSimple
 import uz.smd.itutor.ui.root.BaseFragment
+import java.util.concurrent.Executors
 
 
 /**
@@ -68,33 +69,35 @@ class SendLocation : BaseFragment(R.layout.fragment_send_location), LocationRece
 
     }
     fun sendLocation(location: SimpleLocation) {
-        val uid = Firebase.auth.currentUser?.phoneNumber
-        val data=hashMapOf(
-            "Longitude" to location.lon.toString(),
-            "Latitude" to location.lat.toString())
-        if(uid!=null)
-        Firebase.firestore.collection(uid).document("Location")
-            .set(data, SetOptions.merge())
-            .addOnSuccessListener {
-                if (ks==0){
-                    ks=1
-                    navController.navigate(R.id.showSubjectFragment)
-                }
-                Toast.makeText(
-                    requireContext(),
-                    "Location Data feeds start",
-                    Toast.LENGTH_SHORT
-                ).show()
-//                                        Snackbar.make(takeabreak, "Location Data feeds start", Snackbar.LENGTH_SHORT).show()
-            }
-            .addOnFailureListener {
-                Log.e("TTT","fireabase error: $it")
-                Toast.makeText(
-                    requireContext(),
-                    "Failed location feed: $it",
-                    Toast.LENGTH_SHORT
-                ).show()
-            }
+        Executors.newSingleThreadExecutor().execute {
+            val uid = Firebase.auth.currentUser?.phoneNumber
+            val data=hashMapOf(
+                "Longitude" to location.lon.toString(),
+                "Latitude" to location.lat.toString())
+            if(uid!=null)
+                Firebase.firestore.collection(uid).document("Location")
+                    .set(data, SetOptions.merge())
+                    .addOnSuccessListener {
+
+    Toast.makeText(
+        requireContext(),
+        "Location Data feeds start",
+        Toast.LENGTH_SHORT
+    ).show()
+                    }
+                    .addOnFailureListener {
+                        Log.e("TTT","fireabase error: $it")
+                        Toast.makeText(
+                            requireContext(),
+                            "Failed location feed: $it",
+                            Toast.LENGTH_SHORT
+                        ).show()
+                    }
+        }
+        if (ks==0){
+            ks=1
+            navController.navigate(R.id.showSubjectFragment)
+        }
         Toast.makeText(requireContext(),
             "Your location \n long: ${location?.lon}\n lat: ${location?.lat}",
             Toast.LENGTH_SHORT).show()
