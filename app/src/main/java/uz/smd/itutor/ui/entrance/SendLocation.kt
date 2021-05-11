@@ -36,7 +36,7 @@ class SendLocation : BaseFragment(R.layout.fragment_send_location), LocationRece
     lateinit var locationManager: LocationManager
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        ks=0
+
         mActivity.hideBottomMenu()
          locator= Geolocator(requireActivity())
         btnSendLocation.setOnClickListener {
@@ -49,6 +49,11 @@ class SendLocation : BaseFragment(R.layout.fragment_send_location), LocationRece
             }
 
         }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        ks=0
     }
 
     override fun passLocation(location: SimpleLocation?) {
