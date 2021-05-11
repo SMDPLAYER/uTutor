@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:background="#fff"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <Space
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_weight="0.5"/>
+    <ImageView
+        android:layout_width="200dp"
+        android:layout_height="100dp"
+        android:src="@drawable/ututor"/>
+    <Space
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:textColor="#5C5C5C"
+       style="@style/TextAppearance.AppCompat.Title"
+        android:text="Xush kelibsiz"/>
+    <Space
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_weight="0.3"/>
+    <LinearLayout
+        android:id="@+id/btnPhone"
+        android:clickable="true"
+        android:gravity="center_vertical"
+        android:background="@drawable/number_card"
+        android:foreground="?selectableItemBackgroundBorderless"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:focusable="true">
+        <TextView
+            android:paddingStart="@dimen/_10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#4784DE"
+            style="@style/TextAppearance.AppCompat.Title"
+            android:text="+998 |"/>
+        <EditText
+            android:id="@+id/phoneNumber"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:hint="Telefon raqami"
+            android:inputType="number"
+            android:maxLength="9"
+android:background="#F9F9F9"
+            android:textColorHint="#A8B9D2"
+            android:textColor="#4784DE"
+             />
+    </LinearLayout>
+    <Space
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_weight="0.3"/>
+    <TextView
+        android:gravity="center"
+        android:textColor="#A8B9D2"
+        android:text="Ilovada aftorizatsiya qilish uchun\n
+telefon raqamini kiriting"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <Space
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+    <TextView
+android:id="@+id/btnAuth"
+        android:text="Ilovaga kirish"
+        android:gravity="center"
+        android:textSize="18sp"
+        style="@style/TextAppearance.AppCompat.Title"
+        android:textColor="#fff"
+        android:layout_width="@dimen/_250dp"
+        android:layout_height="50dp"
+        android:background="@drawable/circular_blue_solid"
+        />
+    <Space
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_weight="0.5"/>
+
+</LinearLayout>

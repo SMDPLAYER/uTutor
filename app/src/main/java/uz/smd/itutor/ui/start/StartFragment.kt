@@ -10,6 +10,7 @@ import androidx.lifecycle.Observer
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.fragment_start.*
 import uz.smd.itutor.R
+import uz.smd.itutor.ui.root.MainActivity
 
 /**
  * Created by Siddikov Mukhriddin on 2/10/21
@@ -22,6 +23,7 @@ val adapter=ListUseAreasAdapter()
 val adapterUser=ListUserAdapter()
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        (requireActivity() as MainActivity).showBottomMenu()
         handleLiveData()
         listUseAreas.adapter=adapter
         listPrograms.adapter=adapterUser

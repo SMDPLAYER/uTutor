@@ -9,6 +9,8 @@ import androidx.navigation.findNavController
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.bottom_menu.*
 import uz.smd.itutor.R
+import uz.smd.itutor.utils.gone
+import uz.smd.itutor.utils.visible
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
@@ -21,22 +23,21 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun clickListener() {
-
-        bottomStory.setOnClickListener {
+//        bottomStory.setOnClickListener {
+////
+//        }
+//        bottomSettings.setOnClickListener {
 //
-        }
-        bottomSettings.setOnClickListener {
-
-            inSettings()
-        }
-        bottomPrograms.setOnClickListener {
-            navController.navigate(R.id.showFavorite)
-            inProgram()
-        }
-        bottomActivnost.setOnClickListener {
-            navController.navigate(R.id.showSEarch)
-            inProfile()
-        }
+//            inSettings()
+//        }
+//        bottomPrograms.setOnClickListener {
+//            navController.navigate(R.id.showFavorite)
+//            inProgram()
+//        }
+//        bottomActivnost.setOnClickListener {
+//            navController.navigate(R.id.showSEarch)
+//            inProfile()
+//        }
     }
 
     fun inProfile() {
@@ -65,5 +66,12 @@ class MainActivity : AppCompatActivity() {
 
         bottomSettings.isClickable = true
         bottomActivnost.isClickable = true
+    }
+
+    fun hideBottomMenu() {
+        bottom_navigation.gone()
+    }
+    fun showBottomMenu() {
+        bottom_navigation.visible()
     }
 }

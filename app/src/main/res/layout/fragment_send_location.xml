@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:background="#fff"
+    android:orientation="vertical"
+    android:gravity="center"
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <ImageView
+        android:src="@drawable/img_location"
+        android:layout_width="150dp"
+
+        android:layout_height="200dp"/>
+    <TextView
+
+        android:id="@+id/btnSendLocation"
+        android:text="Lokatsiya yuborish"
+        android:gravity="center"
+        android:textSize="18sp"
+        style="@style/TextAppearance.AppCompat.Title"
+        android:textColor="#fff"
+        android:layout_width="@dimen/_250dp"
+        android:layout_height="50dp"
+        android:background="@drawable/circular_blue_solid"
+        />
+    <TextView
+        android:layout_margin="10dp"
+        android:gravity="center"
+        android:textColor="#A8B9D2"
+        android:text="Lokatsiya yo’qmi,\nunda shahringizni kiriting"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <LinearLayout
+        android:layout_marginTop="10dp"
+        android:id="@+id/btnSearchCity"
+        android:clickable="true"
+        android:gravity="center_vertical"
+        android:background="@drawable/number_card"
+        android:foreground="?selectableItemBackgroundBorderless"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:focusable="true">
+        <ImageView
+            android:layout_marginHorizontal="@dimen/_10dp"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+        android:src="@drawable/icn_search"
+         />
+        <EditText
+            android:id="@+id/phoneNumber"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:hint="Shahringizni yozing"
+            android:inputType="textPersonName|textCapWords"
+            android:maxLength="9"
+            android:background="#F9F9F9"
+            android:textColorHint="#A8B9D2"
+            android:textColor="#4784DE"
+            />
+    </LinearLayout>
+<Space
+    android:layout_width="0dp"
+    android:layout_height="0dp"
+    android:layout_weight="1"/>
+</LinearLayout>

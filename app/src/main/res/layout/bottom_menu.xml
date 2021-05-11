@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="70dp"
     android:layout_gravity="bottom"
-    android:background="#0D000000"
+    android:background="@drawable/img_bottom"
     android:orientation="horizontal"
     android:paddingHorizontal="10dp">
 
@@ -26,15 +26,16 @@
             android:id="@+id/btn_search2"
             android:layout_width="29dp"
             android:layout_height="30dp"
-            android:src="@drawable/ic_search1" />
+            android:src="@drawable/img_home" />
 
         <TextView
+            android:visibility="gone"
             android:id="@+id/btn_search1"
             style="@style/bottomText"
             android:textColor="#00B8D4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Qidiruv" />
+            android:text="" />
     </LinearLayout>
 
     <LinearLayout
@@ -52,18 +53,20 @@ android:foreground="?selectableItemBackgroundBorderless"
             android:id="@+id/btnFavorite"
             android:layout_width="29dp"
             android:layout_height="30dp"
-            android:src="@drawable/ic_doublehearts" />
+            android:src="@drawable/img_love" />
 
         <TextView
+            android:visibility="gone"
             android:id="@+id/btnFavorite1"
             style="@style/bottomText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Tanlanganlar" />
+            android:text="" />
 
     </LinearLayout>
 
     <LinearLayout
+        android:visibility="gone"
         android:foreground="?selectableItemBackgroundBorderless"
         android:id="@+id/bottomStory"
         android:layout_width="0dp"
@@ -101,13 +104,14 @@ android:foreground="?selectableItemBackgroundBorderless"
         <ImageView
             android:layout_width="29dp"
             android:layout_height="30dp"
-            android:src="@drawable/ic_profile_incircle" />
+            android:src="@drawable/img_account" />
 
         <TextView
+            android:visibility="gone"
             style="@style/bottomText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Account" />
+            android:text="" />
 
     </LinearLayout>
 

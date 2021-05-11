@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/startFragment">
+    app:startDestination="@id/authFragment">
     <action
         android:id="@+id/showFavorite"
         app:destination="@id/favoriteFragment"
@@ -30,4 +30,72 @@
         tools:layout="@layout/fragment_favorite"
         android:name="uz.smd.itutor.ui.favorite.FavoriteFragment"
         android:label="FavoriteFragment" />
+    <fragment
+        tools:layout="@layout/fragment_auth"
+        android:id="@+id/authFragment"
+        android:name="uz.smd.itutor.ui.auth.AuthFragment"
+        android:label="AuthFragment" >
+        <action
+            app:enterAnim="@anim/enter"
+            app:exitAnim="@anim/exit"
+            app:popEnterAnim="@anim/pop_enter"
+            app:popExitAnim="@anim/pop_exit"
+            android:id="@+id/action_authFragment_to_verifyFragment"
+            app:destination="@id/verifyFragment" />
+    </fragment>
+    <fragment
+        tools:layout="@layout/fragment_verify"
+        android:id="@+id/verifyFragment"
+        android:name="uz.smd.itutor.ui.auth.VerifyFragment"
+        android:label="VerifyFragment" />
+    <action
+        android:id="@+id/showIsTeacher"
+        app:destination="@id/isTeacher"
+        app:enterAnim="@anim/enter"
+        app:exitAnim="@anim/exit"
+        app:popEnterAnim="@anim/pop_enter"
+        app:popExitAnim="@anim/pop_exit"
+        />
+    <fragment
+        tools:layout="@layout/fragment_is_teacher"
+        android:id="@+id/isTeacher"
+        android:name="uz.smd.itutor.ui.entrance.IsTeacher"
+        android:label="IsTeacher" />
+    <action
+        android:id="@+id/showSendLocation"
+        app:destination="@id/sendLocation"
+        app:enterAnim="@anim/enter"
+        app:exitAnim="@anim/exit"
+        app:popEnterAnim="@anim/pop_enter"
+        app:popExitAnim="@anim/pop_exit"
+        />
+    <fragment
+        tools:layout="@layout/fragment_send_location"
+        android:id="@+id/sendLocation"
+        android:name="uz.smd.itutor.ui.entrance.SendLocation"
+        android:label="SendLocation" />
+    <action
+        android:id="@+id/showSubjectFragment"
+        app:destination="@id/subjectsFragment"
+        app:enterAnim="@anim/enter"
+        app:exitAnim="@anim/exit"
+        app:popEnterAnim="@anim/pop_enter"
+        app:popExitAnim="@anim/pop_exit"
+        />
+    <fragment
+        android:id="@+id/subjectsFragment"
+        android:name="uz.smd.itutor.ui.subjects.SubjectsFragment"
+        android:label="SubjectsFragment" />
+    <action
+        android:id="@+id/showUsersFragment"
+        app:destination="@id/subjectFragment"
+        app:enterAnim="@anim/enter"
+        app:exitAnim="@anim/exit"
+        app:popEnterAnim="@anim/pop_enter"
+        app:popExitAnim="@anim/pop_exit"
+        />
+    <fragment
+        android:id="@+id/subjectFragment"
+        android:name="uz.smd.itutor.ui.subjects.SubjectFragment"
+        android:label="SubjectFragment" />
 </navigation>
