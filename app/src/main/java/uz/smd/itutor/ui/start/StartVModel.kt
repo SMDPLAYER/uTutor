@@ -21,5 +21,8 @@ class StartVModel @ViewModelInject constructor(prefss: LocalStorage) : ViewModel
     fun volala(){
 
     }
+    fun helloMine(){
+
+    }
 
 }
