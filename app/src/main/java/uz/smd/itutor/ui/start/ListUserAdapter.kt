@@ -49,9 +49,10 @@ class ListUserAdapter : RecyclerView.Adapter<ListUserAdapter.ViewHolder>() {
             name.setText(d.name)
             viewUseAreas.setOnClickListener { listener?.invoke(d) }
         }
-fun helloWorld(){
 
-}
+        fun holoFragment(){
+
+        }
 
     }
 
