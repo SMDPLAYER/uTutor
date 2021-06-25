@@ -22,22 +22,22 @@ class Geolocator(private val context: Activity){
     private val locationManager = context.getSystemService(AppCompatActivity.LOCATION_SERVICE) as LocationManager
     private var simpleLocationListener : SimpleLocationListener? = null
 
-    fun getUserPosition(locationReceiver: LocationReceiver, isGPSEnabled:Boolean=false) :Location?{
+    fun getUserPosition(locationReceiver: LocationReceiver, isGPSEnabled:Boolean=false,block: () -> Unit) :Location?{
         if (checkSelfPermission(context, ACCESS_FINE_LOCATION) != PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(context, arrayOf(ACCESS_FINE_LOCATION), 2)
             return null
         } else {
             if (isGPSEnabled)
-            locationEnabled()
+            locationEnabled(block)
             if (simpleLocationListener == null){
             simpleLocationListener = SimpleLocationListener(locationReceiver)
-            locationManager.requestLocationUpdates(GPS_PROVIDER, 1_000, 100F, simpleLocationListener!!)}
+            locationManager.requestLocationUpdates(GPS_PROVIDER, 100, 100F, simpleLocationListener!!)}
             locationManager.getLastKnownLocation(GPS_PROVIDER)?.let{ return it }
             locationManager.getLastKnownLocation(PASSIVE_PROVIDER)?.let{ return it }
             return null
         }
     }
-     fun locationEnabled() {
+     fun locationEnabled(block:()->Unit) {
         val lm = context.getSystemService(Context.LOCATION_SERVICE) as LocationManager?
         var gps_enabled = false
         var network_enabled = false
@@ -61,6 +61,8 @@ class Geolocator(private val context: Activity){
                 .setNegativeButton("Отмена", null)
                 .show()
         }
+         else
+            block()
     }
 
     fun clearListeners(){

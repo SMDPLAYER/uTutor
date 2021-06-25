@@ -33,9 +33,10 @@ class AuthFragment : BaseFragment(R.layout.fragment_auth) {
 lateinit var prefs:LocalStorage
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        if (prefs.isAuthed){
-            navController.popBackStack()
-            navController.navigate(R.id.showIsTeacher)}
+//        if (prefs.isAuthed){
+//            navController.popBackStack()
+//            navController.navigate(R.id.showIsTeacher)
+//        }
         (requireActivity() as MainActivity).hideBottomMenu()
         handleLiveData()
         btnPhone.setOnClickListener {

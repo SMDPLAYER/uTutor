@@ -1,5 +1,6 @@
 package uz.smd.itutor.ui.subjects
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -9,6 +10,8 @@ import android.widget.ArrayAdapter
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
+import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.Observer
 import kotlinx.android.synthetic.main.subject_fragment.*
 import uz.smd.itutor.R
 import uz.smd.itutor.ui.root.BaseFragment
@@ -17,6 +20,7 @@ import uz.smd.itutor.ui.root.BaseFragment
  * Created by Siddikov Mukhriddin on 4/26/21
  */
 class SubjectFragment:BaseFragment(R.layout.subject_fragment) {
+    @SuppressLint("FragmentLiveDataObserve")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         mActivity.showBottomMenu()
@@ -32,11 +36,15 @@ class SubjectFragment:BaseFragment(R.layout.subject_fragment) {
 
 
         val itemsAdapter=SubjectAdapter(requireContext(),items)
+        itemsAdapter.tutorID.observe(this, Observer {
+            navController.navigate(R.id.showDescFragment)
+        })
         listSubject.adapter= itemsAdapter
     }
 }
 class SubjectAdapter(context: Context, users: ArrayList<Tutors>) :
     ArrayAdapter<Tutors?>(context, 0, users) {
+    val tutorID=MutableLiveData<Int>()
     override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
         // Get the data item for this position
         var convertView = convertView
@@ -46,7 +54,7 @@ class SubjectAdapter(context: Context, users: ArrayList<Tutors>) :
             convertView = LayoutInflater.from(context).inflate(R.layout.item_users, parent, false)
         }
         convertView?.setOnClickListener {
-            Toast.makeText(context,"Helo", Toast.LENGTH_SHORT).show()
+            tutorID.value=position
         }
         // Lookup view for data population
         val tvName = convertView!!.findViewById<View>(R.id.tv_feedback_name) as TextView

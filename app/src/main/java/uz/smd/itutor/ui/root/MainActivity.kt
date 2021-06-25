@@ -26,14 +26,14 @@ class MainActivity : AppCompatActivity() {
 //        bottomStory.setOnClickListener {
 ////
 //        }
-//        bottomSettings.setOnClickListener {
-//
+        bottomSettings.setOnClickListener {
+            navController.navigate(R.id.showProfileFragment)
 //            inSettings()
-//        }
-//        bottomPrograms.setOnClickListener {
-//            navController.navigate(R.id.showFavorite)
+        }
+        bottomPrograms.setOnClickListener {
+            navController.navigate(R.id.showFavorite)
 //            inProgram()
-//        }
+        }
 //        bottomActivnost.setOnClickListener {
 //            navController.navigate(R.id.showSEarch)
 //            inProfile()

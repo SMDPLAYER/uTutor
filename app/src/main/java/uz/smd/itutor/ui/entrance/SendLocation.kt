@@ -41,7 +41,17 @@ class SendLocation : BaseFragment(R.layout.fragment_send_location), LocationRece
         mActivity.hideBottomMenu()
          locator= Geolocator(requireActivity())
         btnSendLocation.setOnClickListener {
-            locator.getUserPosition(this,true).let {
+
+            locator.getUserPosition(this,true) {
+                if (ks == 0) {
+                    ks = 1
+                    navController.navigate(R.id.showSubjectFragment)
+                }
+            }.let {
+              if (it!=null)
+              {
+
+              }
                 it?.toSimple()?.let { it1 ->
                     sendLocation(it1)
                     locator.clearListeners()
@@ -60,7 +70,12 @@ class SendLocation : BaseFragment(R.layout.fragment_send_location), LocationRece
     override fun passLocation(location: SimpleLocation?) {
         location?.let { sendLocation(it) }
         if (location != null && location.accuracy > 50){
-            locator.getUserPosition(this,true)
+            locator.getUserPosition(this,true) {
+                if (ks == 0) {
+                    ks = 1
+                    navController.navigate(R.id.showSubjectFragment)
+                }
+            }
             return}
         location?.let {
             locator.clearListeners()
@@ -94,12 +109,8 @@ class SendLocation : BaseFragment(R.layout.fragment_send_location), LocationRece
                         ).show()
                     }
         }
-        if (ks==0){
-            ks=1
-            navController.navigate(R.id.showSubjectFragment)
-        }
         Toast.makeText(requireContext(),
-            "Your location \n long: ${location?.lon}\n lat: ${location?.lat}",
+            "Your location Uzbekistan Tashkent \n long: ${location?.lon}\n lat: ${location?.lat}",
             Toast.LENGTH_SHORT).show()
     }
     private fun getLocation() {

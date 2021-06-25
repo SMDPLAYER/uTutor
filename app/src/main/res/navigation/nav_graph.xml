@@ -84,6 +84,7 @@
         />
     <fragment
         android:id="@+id/subjectsFragment"
+        tools:layout="@layout/subject_fragment"
         android:name="uz.smd.itutor.ui.subjects.SubjectsFragment"
         android:label="SubjectsFragment" />
     <action
@@ -97,5 +98,36 @@
     <fragment
         android:id="@+id/subjectFragment"
         android:name="uz.smd.itutor.ui.subjects.SubjectFragment"
-        android:label="SubjectFragment" />
+        android:label="SubjectFragment"
+        tools:layout="@layout/subject_fragment"/>
+    <action
+        android:id="@+id/showDescFragment"
+        app:destination="@id/descriptionFragment"
+        app:enterAnim="@anim/enter"
+        app:exitAnim="@anim/exit"
+        app:popEnterAnim="@anim/pop_enter"
+        app:popExitAnim="@anim/pop_exit"
+        />
+    <fragment
+        android:id="@+id/descriptionFragment"
+        tools:layout="@layout/desc_fragment"
+        android:name="uz.smd.itutor.ui.subjects.DescriptionFragment"
+        android:label="DescriptionFragment" />
+    <action
+        android:id="@+id/showProfileFragment"
+        app:destination="@id/profileFragment"
+        app:enterAnim="@anim/enter"
+        app:exitAnim="@anim/exit"
+        app:popEnterAnim="@anim/pop_enter"
+        app:popExitAnim="@anim/pop_exit"
+        />
+    <fragment
+        tools:layout="@layout/fragment_profile"
+        android:id="@+id/profileFragment"
+        android:name="uz.smd.itutor.ui.ProfileFragment"
+        android:label="ProfileFragment" />
+    <fragment
+        android:id="@+id/aboutFragment"
+        android:name="uz.smd.itutor.ui.about.AboutFragment"
+        android:label="AboutFragment" />
 </navigation>
