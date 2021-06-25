@@ -56,6 +56,9 @@ class ListUserAdapter : RecyclerView.Adapter<ListUserAdapter.ViewHolder>() {
 fun ok(){
 
 }
+        fun helloWorld(){
+
+        }
     }
 
 }
