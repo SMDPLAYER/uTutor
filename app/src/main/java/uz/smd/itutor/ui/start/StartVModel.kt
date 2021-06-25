@@ -18,5 +18,8 @@ class StartVModel @ViewModelInject constructor(prefss: LocalStorage) : ViewModel
         prefss.name="hello"
         k.value = prefss.name
     }
+    fun volala(){
+
+    }
 
 }

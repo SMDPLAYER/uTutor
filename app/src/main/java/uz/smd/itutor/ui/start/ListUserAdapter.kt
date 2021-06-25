@@ -53,6 +53,9 @@ class ListUserAdapter : RecyclerView.Adapter<ListUserAdapter.ViewHolder>() {
         fun holoFragment(){
 
         }
+        fun shutUp(){
+
+        }
 
     }
 
