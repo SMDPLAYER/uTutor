@@ -19,4 +19,9 @@ class StartVModel @ViewModelInject constructor(prefss: LocalStorage) : ViewModel
         k.value = prefss.name
     }
 
+
+
+    fun omg(){
+
+    }
 }
