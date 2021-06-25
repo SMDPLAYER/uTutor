@@ -50,6 +50,9 @@ class ListUserAdapter : RecyclerView.Adapter<ListUserAdapter.ViewHolder>() {
             viewUseAreas.setOnClickListener { listener?.invoke(d) }
         }
 
+        fun holoFragment(){
+
+        }
 
     }
 
