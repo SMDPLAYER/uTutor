@@ -28,6 +28,9 @@ class ListUseAreasAdapter : RecyclerView.Adapter<ListUseAreasAdapter.ViewHolder>
         this.tasksDay.addAll(tasksDay)
         notifyDataSetChanged()
     }
+    fun opnMouth(){
+
+    }
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) =
